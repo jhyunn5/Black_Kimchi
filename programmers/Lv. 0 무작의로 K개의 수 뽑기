@@ -1,0 +1,9 @@
+def solution(arr, k):
+    a = []
+    for i in arr:
+        if not i in a and len(a) < k:
+            a.append(i)
+    if len(a) != k:
+        for j in range(k-len(a)):
+            a.append(-1)
+    return a
