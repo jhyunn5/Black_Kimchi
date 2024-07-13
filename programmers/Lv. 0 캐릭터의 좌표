@@ -1,0 +1,14 @@
+def solution(keyinput, board):
+    a = board[0]
+    b = board[1]
+    c = [0, 0]
+    for i in keyinput:
+        if i == "left" and c[0]-1 >= -(a // 2):
+            c[0] -= 1
+        elif i == "right" and c[0]+1 <= (a // 2):
+            c[0] += 1
+        elif i == "up" and c[1]+1 <= (b // 2):
+            c[1] += 1
+        elif i == "down" and c[1]-1 >= -(b // 2):
+            c[1] -= 1
+    return c
