@@ -1,0 +1,53 @@
+def solution(n):
+    answer = []
+    for i in range(n):
+        c = []
+        for j in range(n):
+            c.append(0)
+        answer.append(c)
+    i = 1
+    x = 0
+    y = 0
+    a = n
+    b = 'b'
+    while i < n * n + 1:
+        if b == 'b':
+            for j in range(a): #4
+                answer[x][y + j] = i
+                i += 1
+            a -= 1
+            y += a #7
+            b = 'd'
+
+
+        elif b == 'd':
+            for j in range(a):
+                answer[x + (j + 1)][y] = i
+                i += 1
+            x += a
+            b = 'l'
+
+        elif b == 'l':
+            for j in range(a):
+                answer[x][y - (j + 1)] = i
+                i += 1
+            y -= a
+            a -= 1
+            b = 't'
+
+        elif b == 't':
+            for j in range(a):
+                answer[x - (j + 1)][y] = i
+                i += 1
+            x -= a
+            b = 'r'
+            
+        elif b == 'r':
+            for j in range(a):
+                answer[x][y + (j + 1)] = i
+                i += 1
+            y += a
+            a -= 1
+            b = 'd'
+
+    return answer
