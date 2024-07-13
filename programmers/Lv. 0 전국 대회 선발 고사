@@ -1,0 +1,10 @@
+def solution(rank, attendance):
+    x = list(zip(rank,attendance))
+    x.sort()
+    abc = []
+    for i in x:
+        if len(abc) == 3:
+            break
+        if i[1]:
+            abc.append(rank.index(i[0]))
+    return 10000 * abc[0] + 100 * abc[1] + abc[2]
