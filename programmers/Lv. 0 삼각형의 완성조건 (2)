@@ -1,0 +1,4 @@
+def solution(s):
+    a = max(s) - min(s)
+    b = max(s) + min(s)
+    return b-a-1
