@@ -1,0 +1,6 @@
+def solution(my_string):
+    a = list(range(65,91)) + list(range(97,123))
+    answer = []
+    for i in a:
+        answer.append(my_string.count(chr(i)))
+    return answer
