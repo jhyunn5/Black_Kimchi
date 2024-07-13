@@ -1,0 +1,14 @@
+def factorial(x):
+    a = 1
+    for i in range(1, x + 1):
+        a *= i
+    return a
+
+def solution(balls, share):
+    answer = 0
+    a = factorial(balls)
+    b = factorial(share)
+    c = factorial(balls - share)
+
+    answer = a / (c * b)
+    return answer
