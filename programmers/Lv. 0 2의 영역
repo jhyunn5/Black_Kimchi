@@ -1,0 +1,13 @@
+def solution(arr):
+    l = 0
+    r = len(arr)-1
+    while l <= r:
+        if arr[l] != 2:
+            l += 1
+        elif arr[r] != 2:
+            r -= 1
+        else:
+            break
+    else:
+        return [-1]
+    return  arr[l:r+1]
