@@ -1,0 +1,13 @@
+def solution(ineq, eq, n, m):
+    result = 0
+    if ineq == '>':
+        if eq == '=':
+            result = (n >= m) + 0
+        else:
+            result = (n > m) + 0
+    else:
+        if eq == '=':
+            result = (n <= m) + 0
+        else:
+            result = (n < m) + 0
+    return result
